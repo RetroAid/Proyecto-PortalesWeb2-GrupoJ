@@ -2,10 +2,6 @@ import { defineConfig } from "vite";
 import path, { resolve } from 'node:path';
 import * as glob from "glob";
 
-import HtmlCssPurgePlugin from 'vite-plugin-purgecss';
-import HandlebarPlugin from 'vite-plugin-handlebars';
-
-import getPageContext from './src/data/index';
 
 
 function obtenerHtmlFiles() {
@@ -25,35 +21,16 @@ function obtenerHtmlFiles() {
             ]
         })
     );
-    /*
-        {
-            "index": "~/....../index.html",
-            "productos": "~/......../productos.html",
-        }
-    */
 }
 
 export default defineConfig(
     {
         appType: 'mpa',
+        base: process.env.DEPLOY_BASE_URL ?? '/',
         build: {
             rolldownOptions: {
                 input: obtenerHtmlFiles()
             }
-        },
-        plugins: [
-            HandlebarPlugin(
-                {
-                    partialDirectory: resolve(__dirname, 'src/partials'),
-                    context: (page) => {
-                        console.log(`Cargando contexto de: ${page}`);
-                        let context = getPageContext(page);
-                        console.log(JSON.stringify(context,null, 2));
-                        return context;
-                    }
-                }
-            ),
-            HtmlCssPurgePlugin()
-        ]
+        }
     }
 );
