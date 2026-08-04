@@ -1,0 +1,49 @@
+body > header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid @gray-100;
+
+    > div {
+        .contenedor-centrado();
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        > a:first-child {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: @dark;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 32px;
+
+            a {
+                font-weight: 500;
+                transition: @transition-fast;
+
+                &:hover {
+                    color: @primary;
+                }
+            }
+        }
+
+        > a:last-child {
+            background-color: @primary;
+            color: @white;
+            padding: 10px 20px;
+            border-radius: @radius-sm;
+            font-weight: 600;
+            transition: @transition-fast;
+
+            &:hover {
+                background-color: @primary-hover;
+            }
+        }
+    }
+}
