@@ -7,7 +7,7 @@ export default {
     hero_subtitle: 'Laboratorio de Diagnóstico Veterinario Especializado',
     hero_description: 'Ofrecemos análisis especializados para apoyar el diagnóstico clínico con resultados confiables, entrega rápida e interpretación profesional.',
     hero_btn_primary: 'Ver Servicios',
-    hero_btn_secondary: 'Contactar (+504 3257-2412)',
+    hero_btn_secondary: 'Contactar',
 
     services_title: 'Nuestros Servicios de Laboratorio',
     services_subtitle: 'Contamos con tecnología avanzada y áreas especializadas de análisis',
