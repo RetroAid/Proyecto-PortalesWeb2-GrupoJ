@@ -1,0 +1,21 @@
+@import "variables.less";
+@import "global.less";
+@import "hero.less";
+@import "servicios.less";
+@import "contacto.less";
+@import "faq.less";
+@import "nosotros.less";
+@import "header.less";
+
+
+/* Responsive básico */
+@media (max-width: 768px) {
+    #inicio > div,
+    #contacto > div {
+        grid-template-columns: 1fr;
+    }
+
+    body > header > div nav {
+        display: none;
+    }
+}

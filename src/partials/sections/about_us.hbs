@@ -1,0 +1,13 @@
+<section id="nosotros">
+    <div>
+        <header>
+            <h2>{{aboutus_title}}</h2>
+        </header>
+
+        <div>
+            {{#each aboutus_features}}
+            {{> cards/feature_item this}}
+            {{/each}}
+        </div>
+    </div>
+</section>
