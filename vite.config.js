@@ -2,6 +2,10 @@ import { defineConfig } from "vite";
 import path, { resolve } from 'node:path';
 import * as glob from "glob";
 
+import HtmlCssPurgePlugin from 'vite-plugin-purgecss';
+import HandlebarPlugin from 'vite-plugin-handlebars';
+
+import getPageContext from './src/data/pages/index';
 
 function obtenerHtmlFiles() {
     return Object.fromEntries(
@@ -13,23 +17,31 @@ function obtenerHtmlFiles() {
                     './node_modules/**'
                 ]
             }
-        ).map((file)=>{
+        ).map((file) => {
             return [
-                file.slice(0, file.length - path.extname(file).length), // nombre del archivo sin extensión
-                resolve(__dirname, file) // full path a el archivo
-            ]
+                file.slice(0, file.length - path.extname(file).length),
+                resolve(__dirname, file)
+            ];
         })
     );
 }
 
-export default defineConfig(
-    {
-        appType: 'mpa',
-        base: process.env.DEPLOY_BASE_URL ?? '/',
-        build: {
-            rolldownOptions: {
-                input: obtenerHtmlFiles()
-            }
+export default defineConfig({
+    appType: 'mpa',
+    build: {
+        rollupOptions: {
+            input: obtenerHtmlFiles()
         }
-    }
-);
+    },
+    plugins: [
+        HandlebarPlugin({
+            partialDirectory: resolve(__dirname, 'src/partials'),
+            context: (page) => {
+                console.log(`Cargando contexto de: ${page}`);
+                let context = getPageContext(page);
+                return context;
+            }
+        }),
+        HtmlCssPurgePlugin()
+    ]
+});

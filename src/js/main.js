@@ -1,5 +1,5 @@
-import { initCitas } from './js/citas.js';
-import { initFAQ } from './js/faq.js';
+import { initCitas } from './citas.js';
+import { initFAQ } from './faq.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     initCitas();
