@@ -1,21 +1,16 @@
+/* ==========================================================================
+   ARCHIVO MAESTRO DE IMPORTACIONES (STYLE.LESS)
+   ========================================================================== */
+// Configuración y utilidades de LESS
 @import "variables.less";
+@import "mixins.less";
+
+// Estilos globales de la aplicación
 @import "global.less";
-@import "hero.less";
-@import "servicios.less";
-@import "contacto.less";
-@import "faq.less";
-@import "nosotros.less";
-@import "header.less";
 
-
-/* Responsive básico */
-@media (max-width: 768px) {
-    #inicio > div,
-    #contacto > div {
-        grid-template-columns: 1fr;
-    }
-
-    body > header > div nav {
-        display: none;
-    }
-}
+// Estilos de componentes modulares
+@import "components/navbar.less";
+@import "components/hero.less";
+@import "components/pricing.less";
+@import "components/contact.less";
+@import "components/footer.less";

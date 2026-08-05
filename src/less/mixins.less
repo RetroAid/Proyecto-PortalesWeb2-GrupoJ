@@ -1,0 +1,17 @@
+.contenedor-centrado() {
+    max-width: @container-max;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.transicion-suave(@propiedad: all) {
+    transition: @propiedad 0.3s ease;
+}
+
+.efecto-hover-tarjeta() {
+    .transicion-suave();
+    &:hover {
+        transform: translateY(-6px);
+        box-shadow: @shadow-lg;
+    }
+}
