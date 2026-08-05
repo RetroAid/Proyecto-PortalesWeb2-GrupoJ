@@ -1,14 +1,21 @@
 <section id="servicios">
-    <div>
-        <header>
-            <h2>{{services_title}}</h2>
-            <p>{{services_subtitle}}</p>
-        </header>
+  <div class="grid p-4 md-p-8">
+    
+    <header class="row mb-6 text-center justify-center">
+      <div class="col-12">
+        <h2>{{services_title}}</h2>
+        <p>{{services_subtitle}}</p>
+      </div>
+    </header>
 
-        <div>
-            {{#each services}}
-            {{> cards/service_card this}}
-            {{/each}}
+    <div class="row gap-4">
+      {{#each services}}
+        <!-- ESTA CLASE HACE QUE ENTREN 3 POR FILA EN ESCRITORIO -->
+        <div class="col-12 md-col-6 lg-col-4">
+          {{> cards/service_card this}}
         </div>
+      {{/each}}
     </div>
+
+  </div>
 </section>

@@ -1,0 +1,79 @@
+.generarColumnas(@prefix, @columns, @iteracion : 1)
+    when(@iteracion =< @columns)
+{
+    @selector: ~'.col-@{prefix}@{iteracion}';
+    @ancho: (100% / @columns * @iteracion);
+
+    @offsetSelector: ~'.offset-@{prefix}@{iteracion}';
+
+    @{selector} {
+        flex-basis: @ancho;
+    }
+    @{offsetSelector} {
+        margin-left: @ancho;
+    }
+
+    .generarColumnas(@prefix, @columns, (@iteracion + 1))
+}
+
+.grid {
+    width: 100%;
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+
+        [class*='col-'] {
+            flex: 0 0 100%;
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &.debug {
+        .row {
+            [class*='col-'] { // ✅ Aplica el fondo rojo transparente a TODAS las columnas
+                background-color: rgba(255, 0, 0, 0.2);
+                border: 1px dashed rgba(255, 0, 0, 0.5);
+            }
+        }
+    }
+    // Generar las columnas para móviles
+    .generarColumnas('', 12);
+    // Generar para Tablets
+    @media (min-width: #break-points[tablet]) {
+        .generarColumnas('md-', 12);
+    }
+    // Generar para Desktop
+    @media (min-width: #break-points[desktop]) {
+        .generarColumnas('lg-', 12);
+    }
+    // Generar para Wide Screens
+    @media (min-width: #break-points[wide]) {
+        .generarColumnas('xl-', 12);
+    }
+}
+
+.justify-center {
+    justify-content: center;
+}
+.justify-start {
+    justify-content: start;
+}
+.justify-end {
+    justify-content: end;
+}
+.justify-between {
+    justify-content: space-between;
+}
+.align-items-center {
+    align-items: center;
+}
+.align-items-start {
+    align-items: start;
+}
+.align-items-end {
+    align-items: end;
+}

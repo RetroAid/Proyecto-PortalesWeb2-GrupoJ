@@ -1,48 +1,56 @@
-<section id="contacto">
-    <div>
+<section id="contacto" class="p-4 md-p-8">
+  <div class="row gap-6 items-stretch justify-center">
+
+    <!-- Columna 1: Información de Contacto en Tarjeta -->
+    <div class="col-12 md-col-6">
+      <div class="card p-4 md-p-6 h-100 flex-column justify-between">
         <div>
-            <header>
-                <h2>{{contact_title}}</h2>
-                <p>{{contact_subtitle}}</p>
-            </header>
+          <header class="mb-4">
+            <h2 class="mb-2">{{contact_title}}</h2>
+            <p class="text-muted m-0">{{contact_subtitle}}</p>
+          </header>
 
-            <ul>
-                <li>
-                    <strong>Teléfono / WhatsApp:</strong>
-                    <p>{{contact_phone_1}}</p>
-                </li>
-                <li>
-                    <strong>Ubicación:</strong>
-                    <address>{{contact_address}}</address>
-                </li>
-                <li>
-                    <strong>Horario de Atención:</strong>
-                    <p>{{contact_schedule}}</p>
-                </li>
-            </ul>
+          <ul class="my-4">
+            <li class="mb-3">
+              <strong>Teléfono / WhatsApp:</strong>
+              <p class="mt-1 m-0 text-muted">{{contact_phone_1}}</p>
+            </li>
+            <li class="mb-3">
+              <strong>Ubicación:</strong>
+              <address class="mt-1 m-0 text-muted font-normal">{{contact_address}}</address>
+            </li>
+            <li class="mb-3">
+              <strong>Horario de Atención:</strong>
+              <p class="mt-1 m-0 text-muted">{{contact_schedule}}</p>
+            </li>
+          </ul>
         </div>
-
-        <div>
-            <form action="index.html" method="GET">
-                <h3>Envíanos una Consulta</h3>
-
-                <div>
-                    <label for="user-name">Nombre Completo</label>
-                    <input type="text" id="user-name" name="name" required />
-                </div>
-
-                <div>
-                    <label for="user-phone">Teléfono / WhatsApp</label>
-                    <input type="tel" id="user-phone" name="phone" required />
-                </div>
-
-                <div>
-                    <label for="user-message">Consulta o Especie del Paciente</label>
-                    <textarea id="user-message" name="message" rows="4" required></textarea>
-                </div>
-
-                <button type="submit">{{contact_btn}}</button>
-            </form>
-        </div>
+      </div>
     </div>
+
+    <!-- Columna 2: Formulario de Consulta -->
+    <div class="col-12 md-col-6">
+      <form action="index.html" method="GET" class="card p-4 md-p-6 h-100">
+        <h3 class="mb-4">Envíanos una Consulta</h3>
+
+        <div class="mb-3">
+          <label for="user-name" class="mb-1 block font-medium">Nombre Completo</label>
+          <input type="text" id="user-name" name="name" class="w-100" required />
+        </div>
+
+        <div class="mb-3">
+          <label for="user-phone" class="mb-1 block font-medium">Teléfono / WhatsApp</label>
+          <input type="tel" id="user-phone" name="phone" class="w-100" required />
+        </div>
+
+        <div class="mb-4">
+          <label for="user-message" class="mb-1 block font-medium">Consulta o Especie del Paciente</label>
+          <textarea id="user-message" name="message" rows="4" class="w-100" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">{{contact_btn}}</button>
+      </form>
+    </div>
+
+  </div>
 </section>

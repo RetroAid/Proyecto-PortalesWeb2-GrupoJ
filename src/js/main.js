@@ -1,3 +1,4 @@
+import '../less/style.less';
 import { initHeaderMenu } from './header.js';
 import { initContactForm } from './contact-form.js';
 import { initActiveNav } from './active-nav.js';

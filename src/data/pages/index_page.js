@@ -36,6 +36,11 @@ export default {
             title: 'Inmunología',
             description: 'Pruebas rápidas para Ehrlichia, Anaplasma, Babesia, FIV/FeLV, Parvovirus y Coronavirus.',
             image: 'https://picsum.photos/800/600?random=5'
+        },
+        {
+            title: 'Inmunología',
+            description: 'Pruebas rápidas para Ehrlichia, Anaplasma, Babesia, FIV/FeLV, Parvovirus y Coronavirus.',
+            image: 'https://picsum.photos/800/600?random=5'
         }
     ],
 
