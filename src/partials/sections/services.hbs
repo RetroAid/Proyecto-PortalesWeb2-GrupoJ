@@ -1,0 +1,14 @@
+<section id="servicios">
+    <div>
+        <header>
+            <h2>{{services_title}}</h2>
+            <p>{{services_subtitle}}</p>
+        </header>
+
+        <div>
+            {{#each services}}
+            {{> cards/service_card this}}
+            {{/each}}
+        </div>
+    </div>
+</section>

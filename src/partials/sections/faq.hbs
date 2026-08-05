@@ -1,0 +1,16 @@
+<section id="faq">
+    <div>
+        <header>
+            <h2>{{faq_title}}</h2>
+        </header>
+
+        <div>
+            {{#each faqs}}
+            <details>
+                <summary>{{question}}</summary>
+                <p>{{answer}}</p>
+            </details>
+            {{/each}}
+        </div>
+    </div>
+</section>
