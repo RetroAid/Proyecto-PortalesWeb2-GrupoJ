@@ -1,17 +1,19 @@
 export function initActiveNav() {
-    const sections = document.querySelectorAll('main section[id]');
+    const currentPath = window.location.pathname;
     const navLinks = document.querySelectorAll('header nav a');
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                const id = entry.target.getAttribute('id');
-                navLinks.forEach((link) => {
-                    link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
-                });
-            }
-        });
-    }, { threshold: 0.5 });
+    navLinks.forEach((link) => {
+        const linkPath = link.getAttribute('href');
 
-    sections.forEach((section) => observer.observe(section));
+        // Limpiamos la clase 'active' por si acaso
+        link.classList.remove('active');
+
+        // Comparamos si la ruta actual termina con el href del enlace
+        if (
+            (currentPath === '/' && linkPath.includes('index.html')) ||
+            (linkPath && currentPath.endsWith(linkPath))
+        ) {
+            link.classList.add('active');
+        }
+    });
 }

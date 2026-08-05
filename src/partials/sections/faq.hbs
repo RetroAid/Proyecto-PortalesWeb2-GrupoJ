@@ -1,16 +1,27 @@
-<section id="faq">
-    <div>
-        <header>
-            <h2>{{faq_title}}</h2>
-        </header>
-
-        <div>
-            {{#each faqs}}
-            <details>
-                <summary>{{question}}</summary>
-                <p>{{answer}}</p>
-            </details>
-            {{/each}}
-        </div>
+<section id="faq" class="p-4 md-p-8">
+  <!-- Título centrado -->
+  <div class="row mb-6 justify-center">
+    <div class="col-12 text-center">
+      <header>
+        <h2>{{faq_title}}</h2>
+      </header>
     </div>
+  </div>
+
+  <!-- Contenedor centrado para las preguntas frecuentes -->
+  <div class="row justify-center">
+    <!-- En móvil ocupa 100%, en escritorio se centra a 8 columnas para mejor legibilidad -->
+    <div class="col-12 lg-col-8">
+      <div class="faq-list row gap-3">
+        {{#each faqs}}
+          <div class="col-12">
+            <details class="card p-4">
+              <summary class="font-bold cursor-pointer">{{question}}</summary>
+              <p class="mt-3 text-muted">{{answer}}</p>
+            </details>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
 </section>

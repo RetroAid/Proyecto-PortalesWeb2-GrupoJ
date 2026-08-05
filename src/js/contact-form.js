@@ -1,30 +1,66 @@
 export function initContactForm() {
-    const form = document.querySelector('#contacto form');
-    if (!form) return;
+    const regexIsEmpty = /^\s*$/;
 
-    form.addEventListener('submit', (event) => {
-        event.preventDefault();
+    const formulario = document.querySelector("#contacto form");
+    if (!formulario) return;
 
-        const nameInput = form.querySelector('#user-name');
-        const phoneInput = form.querySelector('#user-phone');
-        const messageInput = form.querySelector('#user-message');
+    const nombreCompletoInput = document.getElementById("user-name");
+    const telefonoInput = document.getElementById("user-phone");
+    const mensajeInput = document.getElementById("user-message");
 
-        const isValid = [nameInput, phoneInput, messageInput].every((input) => {
-            const valid = input.value.trim().length > 0;
-            input.classList.toggle('input-error', !valid);
-            return valid;
-        });
+    formulario.addEventListener("submit", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
 
-        if (!isValid) return;
+        let objErrores = {};
+        let formularioValido = true;
 
-        // Conexion del envio
-        console.log('Formulario listo para enviar:', {
-            name: nameInput.value,
-            phone: phoneInput.value,
-            message: messageInput.value
-        });
+        document.querySelectorAll('.error-text').forEach(n => n.remove());
+        document.querySelectorAll('.error').forEach(n => n.classList.remove('error'));
 
-        form.reset();
-        alert('¡Gracias! Tu consulta fue enviada.');
+        if (!validarEspacioVacio(nombreCompletoInput.value)) {
+            objErrores['txtNombreDiv'] = {
+                error: "Nombre Completo no puede estar vacío.",
+                input: nombreCompletoInput
+            };
+            formularioValido = false;
+        }
+
+        if (!validarEspacioVacio(telefonoInput.value)) {
+            objErrores['txtTelefonoDiv'] = {
+                error: "Numero de teléfono no puede estar vacío.",
+                input: telefonoInput
+            };
+            formularioValido = false;
+        }
+
+        if (!validarEspacioVacio(mensajeInput.value)) {
+            objErrores['txtMensajeDiv'] = {
+                error: "Mensaje no puede estar vacío.",
+                input: mensajeInput
+            };
+            formularioValido = false;
+        }
+
+        if (formularioValido) {
+            formulario.submit();
+        } else {
+            Object.entries(objErrores).forEach(err => {
+                const [key, obj] = err;
+                obj.input.classList.add('error');
+                const container = document.getElementById(key);
+                const errorSpan = document.createElement("div");
+                errorSpan.innerText = obj.error;
+                errorSpan.classList.add('error-text');
+                container.appendChild(errorSpan);
+            });
+        }
     });
+
+    function validarEspacioVacio(valor) {
+        return !regexIsEmpty.test(valor);
+    }
 }
+
+
+

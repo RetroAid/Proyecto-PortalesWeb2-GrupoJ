@@ -23,25 +23,25 @@
         </div>
 
         <div>
-            <form action="index.html" method="GET">
+            <form action="#" method="POST">
                 <h3>Envíanos una Consulta</h3>
 
-                <div>
+                <div id="txtNombreDiv">
                     <label for="user-name">Nombre Completo</label>
                     <input type="text" id="user-name" name="name" required />
                 </div>
 
-                <div>
+                <div id="txtTelefonoDiv">
                     <label for="user-phone">Teléfono / WhatsApp</label>
                     <input type="tel" id="user-phone" name="phone" required />
                 </div>
 
-                <div>
+                <div id="txtMensajeDiv">
                     <label for="user-message">Consulta o Especie del Paciente</label>
                     <textarea id="user-message" name="message" rows="4" required></textarea>
                 </div>
 
-                <button type="submit">{{contact_btn}}</button>
+                <button type="submit" id="btnSubmit">{{contact_btn}}</button>
             </form>
         </div>
     </div>

@@ -4,13 +4,18 @@
 // Configuración y utilidades de LESS
 @import "variables.less";
 @import "mixins.less";
+@import "utilities.less";
+@import "grid.less";
 
 // Estilos globales de la aplicación
 @import "global.less";
 
 // Estilos de componentes modulares
-@import "components/navbar.less";
-@import "components/hero.less";
+@import "components/header.less";
 @import "components/pricing.less";
-@import "components/contact.less";
-@import "components/footer.less";
+
+// Estilos especificos de cada pagina
+@import "pages/hero.less";
+@import "pages/contact.less";
+@import "pages/services.less";
+@import "pages/about_us.less";

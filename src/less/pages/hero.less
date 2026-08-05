@@ -1,0 +1,76 @@
+#inicio {
+    padding: 90px 0 70px;
+    background: linear-gradient(135deg, @light-bg 0%, #e4fee0 100%);
+    flex-direction: row;
+    display: block;
+    flex-wrap: wrap;
+
+    > div {
+        .contenedor-centrado();
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 40px;
+        align-items: center;
+
+        > div:first-child {
+            span {
+                color: @primary;
+                font-weight: 600;
+                font-size: 0.9rem;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+
+            h1 {
+                font-size: 2.8rem;
+                font-weight: 800;
+                color: @dark;
+                margin: 12px 0 20px;
+                line-height: 1.2;
+            }
+
+            p {
+                font-size: 1.15rem;
+                margin-bottom: 32px;
+            }
+
+            > div {
+                display: flex;
+                gap: 16px;
+
+                a {
+                    padding: 12px 24px;
+                    border-radius: @radius-sm;
+                    font-weight: 600;
+                    .transicion-suave();
+
+                    &:first-child {
+                        background-color: @primary;
+                        color: @white;
+                        box-shadow: 0 4px 12px rgba(@primary-rgb, 0.25);
+
+                        &:hover {
+                            background-color: @primary-hover;
+                            transform: translateY(-2px);
+                        }
+                    }
+
+                    &:last-child {
+                        border: 2px solid @primary;
+                        color: @primary;
+
+                        &:hover {
+                            background-color: rgba(@primary-rgb, 0.08);
+                            transform: translateY(-2px);
+                        }
+                    }
+                }
+            }
+        }
+
+        > div:last-child img {
+            border-radius: @radius-lg;
+            box-shadow: @shadow-lg;
+        }
+    }
+}

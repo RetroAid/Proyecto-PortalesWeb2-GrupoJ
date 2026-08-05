@@ -1,0 +1,124 @@
+body>header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: @navbar;
+    backdrop-filter: blur(10px);
+
+
+    >div {
+        .contenedor-centrado();
+        height: 100px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        @media (min-width: #break-points[tablet]) {
+            height: 80px;
+            justify-content: space-between;
+        }
+
+        @media (min-width: #break-points[desktop]) {
+            align-items: center;
+        }
+
+        padding: 1rem;
+
+        a img{
+            translate: 0% 0%;
+            @media (min-width: #break-points[tablet]) {
+            translate: 0% -20%;
+        }
+            @media (min-width: #break-points[desktop]) {
+                translate: 0% 0%;
+            }
+        }
+
+
+        >a:first-child {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: @dark;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 32px;
+            padding-top: 0.5rem;
+
+            a {
+                font-weight: 500;
+                transition: @transition-fast;
+
+                &:hover {
+                    color: @primary;
+                }
+            }
+        }
+
+        >a:last-child {
+            background-color: @primary;
+            color: @white;
+            padding: 5px 10px 5px;
+            padding-right: 0px;
+            @media (min-width: #break-points[tablet]) {
+             padding: 10px 20px;
+        }
+            border-radius: @radius-sm;
+            font-weight: 600;
+            transition: @transition-fast;
+            
+
+            &:hover {
+                background-color: @primary-hover;
+            }
+        }
+
+        // Botón hamburguesa
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding-top: 18px;
+            
+
+            span {
+                width: 24px;
+                height: 2px;
+                background-color: @dark;
+                transition: @transition-fast;
+            }
+        }
+
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            nav {
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background-color: @white;
+                border-bottom: 1px solid @gray-100;
+                max-height: 0;
+                overflow: hidden;
+                transition: @transition-fast;
+
+                &.is-open {
+                    max-height: 400px;
+                }
+
+                ul {
+                    flex-direction: column;
+                    padding: 24px;
+                    gap: 20px;
+                }
+            }
+        }
+    }
+}

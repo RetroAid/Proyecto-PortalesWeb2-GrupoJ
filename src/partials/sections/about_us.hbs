@@ -1,13 +1,18 @@
-<section id="nosotros">
-    <div>
-        <header>
-            <h2>{{aboutus_title}}</h2>
-        </header>
-
-        <div>
-            {{#each aboutus_features}}
-            {{> cards/feature_item this}}
-            {{/each}}
-        </div>
+<section id="nosotros" class="p-4 md-p-8">
+  <div class="row mb-6 text-center justify-center">
+    <div class="col-12 lg-col-8">
+      <header>
+        <h2 class="mb-2">{{aboutus_title}}</h2>
+      </header>
     </div>
+  </div>
+
+
+  <div class="row gap-6 justify-center">
+    {{#each aboutus_features}}
+      <div class="col-12 md-col-6 lg-col-4 mb-4">
+        {{> cards/feature_item this}}
+      </div>
+    {{/each}}
+  </div>
 </section>
