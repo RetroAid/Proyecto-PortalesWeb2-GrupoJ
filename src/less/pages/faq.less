@@ -1,6 +1,6 @@
 #faq {
     padding: 80px 0;
-
+    background: @light-bg;
     > div {
         max-width: 800px;
         margin: 0 auto;
@@ -17,11 +17,13 @@
         }
 
         details {
-            background: @light-bg;
+            background: @white;
             margin-bottom: 16px;
             border-radius: @radius-sm;
             padding: 16px 20px;
             cursor: pointer;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.05);
 
             summary {
                 font-weight: 600;

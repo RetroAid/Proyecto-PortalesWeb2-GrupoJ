@@ -20,11 +20,11 @@ export default {
             description: 'Ser el laboratorio veterinario de referencia líder en Honduras y la región, reconocido por la excelencia en diagnósticos especializados, la innovación continua en salud animal y por impulsar el desarrollo de la medicina veterinaria nacional mediante el respaldo científico a clínicas y profesionales del sector.'
         },
         {
-            title: 'Colaboracion con Veterinarios',
+            title: 'Colaboración con Veterinarios',
             description: 'Colaboramos con veterinarios comprometidos para brindar respuestas claras porque sabemos que detrás de cada estudio hay una familia esperando lo mejor para su mascota'
         },
         {
-            title: 'Recolceccion de Muestras',
+            title: 'Recolección de Muestras',
             description: 'En Vet Lab hacemos que el proceso sea más fácil para tu clínica. Nos encargamos de recoger las muestras directamente en tus instalaciones, garantizando un manejo adecuado y un traslado seguro para obtener resultados confiables y oportunos. Porque sabemos que tu tiempo es valioso, nosotros llegamos hasta ti.'
         },
         {
