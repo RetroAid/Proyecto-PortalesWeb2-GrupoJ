@@ -10,7 +10,7 @@ export function initHeaderMenu() {
         toggleBtn.classList.toggle('is-active', isOpen);
     });
 
-    // Cierra el menú al hacer clic en un link (útil en mobile)
+    // Cierra el menú al hacer clic en un link
     nav.querySelectorAll('a').forEach((link) => {
         link.addEventListener('click', () => {
             nav.classList.remove('is-open');
